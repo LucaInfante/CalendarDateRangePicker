@@ -68,8 +68,14 @@ public class CalendarDateRangePickerViewController: UICollectionViewController {
             maximumDate = Calendar.current.date(byAdding: .year, value: 3, to: minimumDate)
         }
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(CalendarDateRangePickerViewController.didTapCancel))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(CalendarDateRangePickerViewController.didTapDone))
+        let leftBBI = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action:  #selector(CalendarDateRangePickerViewController.didTapCancel))
+        leftBBI.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "MuseoSans-700", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)
+        
+        let rightBBI = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(CalendarDateRangePickerViewController.didTapDone))
+        rightBBI.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "MuseoSans-700", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor(red:123/255.0, green:188/255.0, blue:0/255.0,  alpha:1)], for: UIControl.State.normal)
+        
+        self.navigationItem.leftBarButtonItem = leftBBI
+        self.navigationItem.rightBarButtonItem = rightBBI
         self.navigationItem.rightBarButtonItem?.isEnabled = selectedStartDate != nil && selectedEndDate != nil
     }
     
