@@ -29,5 +29,6 @@ Pod::Spec.new do |s|
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.source_files = 'CalendarDateRangePickerViewController/Classes/**/*'
+  s.dependency         "Localize-Swift"
 
 end
