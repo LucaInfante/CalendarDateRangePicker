@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 public protocol CalendarDateRangePickerViewControllerDelegate {
     func didCancelPickingDateRange()
