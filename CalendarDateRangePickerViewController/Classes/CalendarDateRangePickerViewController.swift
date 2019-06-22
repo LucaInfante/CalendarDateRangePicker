@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 public protocol CalendarDateRangePickerViewControllerDelegate {
     func didCancelPickingDateRange()
@@ -46,7 +47,7 @@ public class CalendarDateRangePickerViewController: UICollectionViewController {
     @objc public var selectedColor = UIColor(red: 66/255.0, green: 150/255.0, blue: 240/255.0, alpha: 1.0)
     @objc public var selectedLabelColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
     @objc public var highlightedLabelColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1.0)
-    @objc public var titleText = "Select Dates"
+    @objc public var titleText = "Select dates".localized()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -68,10 +69,10 @@ public class CalendarDateRangePickerViewController: UICollectionViewController {
             maximumDate = Calendar.current.date(byAdding: .year, value: 3, to: minimumDate)
         }
         
-        let leftBBI = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action:  #selector(CalendarDateRangePickerViewController.didTapCancel))
+        let leftBBI = UIBarButtonItem(title: "Alert Cancel Button Standard".localized(), style: .plain, target: self, action:  #selector(CalendarDateRangePickerViewController.didTapCancel))
         leftBBI.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "MuseoSans-700", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)
         
-        let rightBBI = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(CalendarDateRangePickerViewController.didTapDone))
+        let rightBBI = UIBarButtonItem(title: "Alert Confirm Button Standard".localized(), style: .done, target: self, action: #selector(CalendarDateRangePickerViewController.didTapDone))
         rightBBI.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "MuseoSans-700", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor(red:123/255.0, green:188/255.0, blue:0/255.0,  alpha:1)], for: UIControl.State.normal)
         
         self.navigationItem.leftBarButtonItem = leftBBI
