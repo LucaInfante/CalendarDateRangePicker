@@ -1,3 +1,5 @@
+# Forked for personal interventions and not "worthy" of pull request or original git was abandoned.
+
 # CalendarDateRangePickerViewController
 
 [![Version](https://img.shields.io/cocoapods/v/CalendarDateRangePickerViewController.svg?style=flat)](http://cocoapods.org/pods/CalendarDateRangePicker)
